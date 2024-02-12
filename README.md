@@ -10,6 +10,7 @@ The hooks are on different directories depending the language you want to use, c
 
 - Python: `githooks-python`
 - Bash: `githooks-bash`
+- Javascript: `hooks by husky`
 
 # How to make git able to use them
 
