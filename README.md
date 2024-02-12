@@ -26,9 +26,9 @@ Example:
 
 Set the hooks with those rights:
 
-`chmod -R 755 <PATH TO HOOKS>`
+`chmod -R 755 <PATH TO HOOKS>/*`
 
-## Python
+## How to use with Python
 
 You need to install `pre-commit` and `conventional-commits-check` by using pip.
 
