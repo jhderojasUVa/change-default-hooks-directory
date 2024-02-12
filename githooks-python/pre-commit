@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+import subprocess
+import re
+
+# Get current branch
+currentBranchName = subprocess.check_output(["git rev-parse --abbrev-ref HEAD"], shell=True).strip().decode("utf-8")
+
+# Regex to check the branch name
+branchRegExpresion = re.compile("^(feat|fix|hotfix|bug|docs|style|refactor|ref|chore)\/(US|DE|TA)\d{7,}-[a-z0-9-]+$")
+
+if (branchRegExpresion.match(currentBranchName) == "None") == False:
+    print(f"*** Branch name correct**")
+    exit()
+else:
+    print("*** Error! ***")
+    print (f"There is something wrong with your branch name. Branch names in this project must adhere to this contract: (feat|fix|hotfix|bug|docs|style|refactor|ref|chore)\/(US|DE|TA)\d{7,}-[a-z0-9-]+$. Your commit will be rejected. You should rename your branch to a valid name and try again.")
+    exit(1)
+    
