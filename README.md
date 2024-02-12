@@ -26,7 +26,7 @@ Example:
 
 Set the hooks with those rights:
 
-`chmod -R 755 <PATH TO HOOKS>`
+`chmod -R 755 <PATH TO HOOKS>/*`
 
 ## How to use with Python
 
