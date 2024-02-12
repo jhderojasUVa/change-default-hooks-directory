@@ -34,13 +34,13 @@ You need to install `pre-commit` and `conventional-commits-check` by using pip.
 
 `pip install pre-commit`
 
-After, create on the root directory `.pre-commit-config.yaml` that contains the pre-commit configuration:
+After, create on the root directory `.pre-commit-config.yaml` and a `commits_check_config.yaml` that contains the pre-commit configuration (both need to be the same):
 
 ```yml
 repos:
   # Repository where we are using the conventional commits check
   - repo: https://github.com/AliYmn/conventional-commits-check
-    rev: latest  # Use the latest release version
+    rev: V1.0.4  # Use the latest release version
     # Hooks and stages used
     hooks:
       - id: conventional-commits-check
@@ -50,6 +50,16 @@ repos:
 Then, execute this to update the hooks:
 
 `pre-commit install --hook-type commit-msg -f`
+
+If fails because you have set the previous hooks, unset them by 
+
+Finish by updating the hooks by:
+
+`git config --global unset core.hooksPath`
+
+And set them again as previously:
+
+`pre-commit autoupdate`
 
 ### Possible problems
 
