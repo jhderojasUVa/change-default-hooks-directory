@@ -1,0 +1,6 @@
+repos:
+  - repo: https://github.com/AliYmn/conventional-commits-check
+    rev: V1.0.4  # Use the latest release version
+    hooks:
+      - id: conventional-commits-check
+        stages: [commit-msg]
