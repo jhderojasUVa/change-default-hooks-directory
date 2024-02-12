@@ -69,6 +69,10 @@ To finish, update the pre-commit and commit hooks again.
 
 ![alt example of bad and good commit](./img/python_hooks.png)
 
+**Result on a bad branch naming**
+
+![bad branch naming](./img/bad_branch_name.png)
+
 ### Possible problems
 
 | Problem | Cause | Solution |
@@ -76,5 +80,22 @@ To finish, update the pre-commit and commit hooks again.
 | Unable to find `pip` | `pip` is not installed or maybe you have `pip3` installed | You can make an alias for `pip3` to `pip` (`alias pip=pip3`). Also check that `python` is installed on your system. |
 | After installing `pre-commit` the command doesn't work | The `pip` installed commands is not on your path.<br/ >Add it to the systems or user path | Add the location where the `pip` is installing packages to your path.<br/> Usually on MacOS are in `/Library/Frameworks/Python.framework/Versions/3.11/bin` if you installed Python via XCode. If not, check where the executables are on your system.<br />Add that location to your `.bashrc` or `.zshrc` file or your system path on your Windows. |
 
+## How to use with Bash
 
+Execute to set the hooks on the bash directory.
 
+### MacOS/Unix
+
+No configuration is needed, Unix is included.
+
+### Windows
+
+Install WSL version 2, check [Microsoft website](https://learn.microsoft.com/en-us/windows/wsl/install).
+
+Install a repository (recommended Ubuntu).
+
+Run the git command from a bash.
+
+**Optional** you can install [gitbash](https://git-scm.com/downloads) and use it as a replacement.
+
+We recomend both ways.
