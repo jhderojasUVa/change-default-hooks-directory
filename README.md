@@ -59,6 +59,10 @@ Finish by updating the hooks by:
 
 And set them again as previously:
 
+`git config --local core.hooksPath ./githooks-python`
+
+To finish, update the pre-commit and commit hooks again.
+
 `pre-commit autoupdate`
 
 ### Possible problems
