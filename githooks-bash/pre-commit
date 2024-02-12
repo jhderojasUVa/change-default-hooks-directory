@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 LC_ALL=C
 
-local_branch="$(git rev-parse --abbrev-ref HEAD)"
+LOCAL_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
-valid_branch_regex="^(feat|fix|hotfix|bug|docs|style|refactor|ref|chore)\/(US|DE|TA)\d{7,}-[a-z0-9-]+$"
+VALID_BRANCH_REGEX="^(feat|fix|hotfix|bug|docs|style|refactor|ref|chore)\/(US|DE|TA)[0-9]{7,}-[a-z0-9-]+$"
 
-message="There is something wrong with your branch name. Branch names in this project must adhere to this contract: $valid_branch_regex. Your commit will be rejected. You should rename your branch to a valid name and try again."
+ERROR_MESSAGE="There is something wrong with your branch name. Branch names in this project must adhere to this contract: $valid_branch_regex. Your commit will be rejected. You should rename your branch to a valid name and try again."
 
-if [[ ! $local_branch =~ $valid_branch_regex ]]
+if [[ ! $LOCAL_BRANCH =~ $VALID_BRANCH_REGEX ]]
 then
-    echo "$message"
+    echo "** Branch naming error! **"
+    echo "$ERROR_MESSAGE"
     exit 1
 fi
 

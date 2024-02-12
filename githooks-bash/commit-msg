@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+echo "Checking commit-message format..."
+
+## The first arg is the path to the git commit temporary file
+TEMPORARY_FILE_PATH=$1
+
+## Get commit-message from the temporary file
+COMMIT_MSG=`head -n1 $TEMPORARY_FILE_PATH`
+
+## Init regex to match commit-message format
+REGEX="^(build|chore|ci|docs|feat|fix|bug|hotfix|perf|refactor|revert|style|test)(\((US|DE|TA)[0-9]{7,}\))?(!)?:\ [a-zA-Z0-9_ ]*$"
+
+# Let's add a return for... nothing
+echo
+
+## Checking commit-message format
+if [[ ! $COMMIT_MSG =~ $REGEX ]]
+then
+    # The commit is invalid, explain why
+    echo "** Commit message error **:"
+    echo -e "Your commit-message format is not valid:\n$COMMIT_MSG\n"
+    echo "It doesn't follow the standard: $REGEX"
+    echo
+    echo "See Conventional Commits Standard: https://www.conventionalcommits.org/en/v1.0.0/"
+    echo
+    echo "Valid format examples:"
+    echo "fix(US1234567): this is a valid commit"
+    echo "feat: this is a valid comit"
+    # Exit with error
+    exit 1
+else
+    # Commit passes the regex
+    echo "Well done! Your commit-message is valid."
+    # Exit ok
+    exit 0
+fi
