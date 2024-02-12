@@ -40,12 +40,16 @@ After, create on the root directory `.pre-commit-config.yaml` that contains the 
 repos:
   # Repository where we are using the conventional commits check
   - repo: https://github.com/AliYmn/conventional-commits-check
-    rev: v0.3.0  # Use the latest release version
+    rev: latest  # Use the latest release version
     # Hooks and stages used
     hooks:
       - id: conventional-commits-check
         stages: [commit-msg]
 ```
+
+Then, execute this to update the hooks:
+
+`pre-commit install --hook-type commit-msg -f`
 
 ### Possible problems
 
