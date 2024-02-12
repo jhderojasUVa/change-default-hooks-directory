@@ -74,7 +74,7 @@ To finish, update the pre-commit and commit hooks again.
 | Problem | Cause | Solution |
 | ------- | ----- | -------- |
 | Unable to find `pip` | `pip` is not installed or maybe you have `pip3` installed | You can make an alias for `pip3` to `pip` (`alias pip=pip3`). Also check that `python` is installed on your system. |
-| After installing `pre-commit` the command doesn't work | The `pip` installed commands is not on your path | Add it to the systems or user path | Add the location where the `pip` is installing packages to your path.\r\nUsually on MacOS are in `/Library/Frameworks/Python.framework/Versions/3.11/bin` if you installed Python via XCode. If not, check where the executables are on your system.\r\nAdd that location to your `.bashrc` or `.zshrc` file or your system path on your Windows. |
+| After installing `pre-commit` the command doesn't work | The `pip` installed commands is not on your path | Add it to the systems or user path | Add the location where the `pip` is installing packages to your path.<br>Usually on MacOS are in `/Library/Frameworks/Python.framework/Versions/3.11/bin` if you installed Python via XCode. If not, check where the executables are on your system.<br>Add that location to your `.bashrc` or `.zshrc` file or your system path on your Windows. |
 
 
 
