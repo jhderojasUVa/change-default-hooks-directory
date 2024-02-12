@@ -1,5 +1,8 @@
 # change-default-hooks-directory
+
 A small example about how to change and run git hooks in a different directory.
+
+By default git checks the hooks on the directory `.git/hooks` but you can change them to be used anywhere.
 
 # Repository organization
 
@@ -31,10 +34,29 @@ You need to install `pre-commit` and `conventional-commits-check` by using pip.
 
 `pip install pre-commit`
 
+After, create on the root directory `.pre-commit-config.yaml` that contains the pre-commit configuration:
+
+```yml
+repos:
+  # Repository where we are using the conventional commits check
+  - repo: https://github.com/AliYmn/conventional-commits-check
+    rev: v0.3.0  # Use the latest release version
+    # Hooks and stages used
+    hooks:
+      - id: conventional-commits-check
+        stages: [commit-msg]
+```
+
 ### Possible problems
 
 | Problem | Cause | Solution |
 | ------- | ----- | -------- |
 | Unable to find `pip` | `pip` is not installed or maybe you have `pip3` installed | You can make an alias for `pip3` to `pip` (`alias pip=pip3`). Also check that `python` is installed on your system. |
-| After installing `pre-commit` the command doesn't work | The `pip` installed commands is not on your path | Add it to the systems or user path |
+| After installing `pre-commit` the command doesn't work | The `pip` installed commands is not on your path | Add it to the systems or user path | Add the location where the `pip` is installing packages to your path.
+
+Usually on MacOS are in `/Library/Frameworks/Python.framework/Versions/3.11/bin` if you installed Python via XCode. If not, check where the executables are on your system.
+
+Add that location to your `.bashrc` or `.zshrc` file or your system path on your Windows. |
+
+
 
