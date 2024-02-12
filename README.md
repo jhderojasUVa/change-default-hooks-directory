@@ -65,6 +65,10 @@ To finish, update the pre-commit and commit hooks again.
 
 `pre-commit autoupdate`
 
+**Result on bad and good commit message by using conventional commits**
+
+![alt example of bad and good commit](./img/python_hooks.png)
+
 ### Possible problems
 
 | Problem | Cause | Solution |
