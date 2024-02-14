@@ -1,0 +1,33 @@
+# Checklist and Reviewer Checklist
+ 
+- [ ] Have you set the [title of the PR correctly](https://www.eesewiki.ford.com/display/FCEB/Pull+Request+naming+and+commit) (conventional commits style)
+- [ ] Have you added the Rally card/ticket number as a link?
+- [ ] Have you added at least one tag/label?
+- [ ] Have you added at least one reviewer?
+- [ ] Have you added updated the documentation and written the proper comments on the code?
+- [ ] **Reviewer**: Code follows the standard?
+- [ ] **Reviewer**: No unnecessary comments and no bad typos?
+- [ ] **Reviewer**: Clear [documentation and comments on the code](https://www.kernel.org/doc/html/v4.19/process/coding-style.html#commenting)
+- [ ] **Reviewer**: Pass the tests?
+ 
+Rally card link: <!-- Place link here -->
+ 
+# Why
+ 
+<!--
+Please describe the motivation for this PR, and link to relevant GitHub/Jira issues or feature requests.
+-->
+ 
+# How
+ 
+<!--
+How did you build this feature or fix this bug and why?
+-->
+ 
+# Test Plan
+ 
+<!--
+Please describe how you tested this change and how a reviewer could reproduce your test, especially if this PR does not include automated tests! If possible, please also provide terminal output and/or screenshots demonstrating your test/reproduction.
+ 
+Also if the Rally story contains test, put the link here that shows that all of them has passed!
+-->
